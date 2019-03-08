@@ -7,3 +7,7 @@ https://segmentfault.com/a/1190000010530600
 https://blog.csdn.net/dkr380205984/article/details/80116024
 Vue.js路由懒加载[译]
 https://www.jianshu.com/p/abb02075b56b
+图片懒加载
+https://zhuanlan.zhihu.com/p/40438238
+使用Vue写一个图片轮播组件
+https://juejin.im/post/5aaf0907f265da23870e9fed

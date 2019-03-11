@@ -11,3 +11,5 @@ https://www.jianshu.com/p/abb02075b56b
 https://zhuanlan.zhihu.com/p/40438238
 使用Vue写一个图片轮播组件
 https://juejin.im/post/5aaf0907f265da23870e9fed
+用100行代码提升10倍的性能
+https://juejin.im/post/5bec223f5188250c102116b5

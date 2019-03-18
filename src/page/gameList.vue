@@ -6,6 +6,7 @@
     <ul>
         <li v-for="(val, key) in singleTabData.List" :key="key">{{ val.TaskContent }}</li>
     </ul>
+    <h1>火箭队史上疯狂时代</h1>
 </div>
 </template>
 
@@ -20,14 +21,14 @@ export default {
         }
     },
     mounted: function() {
-        axios.get('http://m.cattryapp.com/GameTask/getTaoJinDetail?idTask=274').then((res)=>{
-            this.awardData = res.data.SubTaskList;
-            this.btnWidth = 100 / (this.awardData.length);
-            this.singleTabData = this.awardData[0];
-            console.log(this.singleTabData)
-        }).catch(function(err){
-            console.log(err);
-        })
+        // axios.get('http://m.cattryapp.com/GameTask/getTaoJinDetail?idTask=274').then((res)=>{
+        //     this.awardData = res.data.SubTaskList;
+        //     this.btnWidth = 100 / (this.awardData.length);
+        //     this.singleTabData = this.awardData[0];
+        //     console.log(this.singleTabData)
+        // }).catch(function(err){
+        //     console.log(err);
+        // })
     },
     methods: {
         switchTab: function(index) {

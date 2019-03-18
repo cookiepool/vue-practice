@@ -3,7 +3,7 @@ import Router from 'vue-router';
 import Parent from '@/page/Parent';
 import TestBox from '@/page/TestBox';
 import Game from '@/page/GameList';
-import Test from '@/page/Test';
+import LazyLoad from '@/page/LazyLoad';
 
 import App from '../App';
 Vue.use(Router)
@@ -34,9 +34,9 @@ const routes = [
         component: Game
       },
       {
-        path: '/test_2',
-        name: 'test_2',
-        component: Test
+        path: '/lazyload',
+        name: 'lazyload',
+        component: LazyLoad
       }
     ]
   }

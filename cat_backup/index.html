@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>懒猫试玩</title>
+    <link rel="stylesheet" href="https://static.cattryapp.com/12static/new/css/style.css">
+  </head>
+  <body>
+    
+    <div id="app"></div>
+    
+    <script type="text/javascript" src="static/js/rem.js"></script>
+    <script src="https://static.cattryapp.com/12static/new/js/vue.min.js"></script>
+    <script src="https://static.cattryapp.com/12static/new/js/vue-router.js"></script>
+    <script src="https://static.cattryapp.com/12static/new/js/axios.min.js"></script>
+    <!--<script src="https://s96.cnzz.com/z_stat.php?id=1275731076&web_id=1275731076" language="JavaScript"></script>-->
+    <!--<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1275507155'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/z_stat.php%3Fid%3D1275507155' type='text/javascript'%3E%3C/script%3E"));</script>-->
+    <script>
+      window.onload = function() {
+    // 阻止双击放大
+    document.addEventListener('touchstart', function(event) {
+        if (event.touches.length > 1) {
+            event.preventDefault();
+        }
+    });
+    var lastTouchEnd = 0;
+    document.addEventListener('touchend', function(event) {
+        var now = (new Date()).getTime();
+        if (now - lastTouchEnd <= 300) {
+            event.preventDefault();
+        }
+        lastTouchEnd = now;
+    }, false);
+
+    // 阻止双指放大
+    document.addEventListener('gesturestart', function(event) {
+        event.preventDefault();
+    });
+}
+    </script>
+  </body>
+</html>

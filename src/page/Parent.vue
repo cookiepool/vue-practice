@@ -5,6 +5,8 @@
     <p>来自子组件的数量消息：{{ count }}</p>
     <hr>
     <foot-part></foot-part>
+    <hr>
+    <button v-on:click="testLoading">点击测试加载动画</button>
 </div>
     
 </template>
@@ -27,6 +29,13 @@ export default {
     methods: {
         show_it(data){
             this.count++;
+        },
+        testLoading(){
+            this.$loading.open();
+            var timer = setTimeout(()=>{
+                this.$loading.close();
+                clearTimeout(timer);
+            }, 5000);
         }
     }
 }

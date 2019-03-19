@@ -4,7 +4,10 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import Loading from './components/loading/index';
 Vue.config.productionTip = false
+
+Vue.prototype.$loading = Loading;
 
 /* eslint-disable no-new */
 new Vue({

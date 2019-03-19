@@ -4,6 +4,7 @@ import Parent from '@/page/Parent';
 import TestBox from '@/page/TestBox';
 import Game from '@/page/GameList';
 import LazyLoad from '@/page/LazyLoad';
+import Loading from '@/components/loading/Loading.vue';
 
 import App from '../App';
 Vue.use(Router)
@@ -37,6 +38,11 @@ const routes = [
         path: '/lazyload',
         name: 'lazyload',
         component: LazyLoad
+      },
+      {
+        path: '/loading',
+        name: 'loading',
+        component: Loading
       }
     ]
   }

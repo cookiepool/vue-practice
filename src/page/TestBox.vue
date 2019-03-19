@@ -14,10 +14,10 @@ export default {
     },
     methods: {
         popDialog(){
-            // msgBox.showIt("这是个测试弹框", "Hello Customized Vue Dialog")
-            this.$router.push({
-                path: '/'
-            })
+            msgBox.showIt("这是个测试弹框", "Hello Customized Vue Dialog")
+            // this.$router.push({
+            //     path: '/'
+            // })
         }
     }
 }

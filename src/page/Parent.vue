@@ -7,6 +7,8 @@
     <foot-part></foot-part>
     <hr>
     <button v-on:click="testLoading">点击测试加载动画</button>
+    <hr>
+    <test-box></test-box>
 </div>
     
 </template>
@@ -14,6 +16,7 @@
 <script>
 import ChildOne from "../components/ChildOne";
 import ChildTwo from "../components/ChildTwo";
+import TestBox from "../page/TestBox"
 export default {
     name: "parent",
     data: function () {
@@ -24,7 +27,8 @@ export default {
     },
     components: {
         'head-part': ChildOne,
-        "foot-part": ChildTwo
+        "foot-part": ChildTwo,
+        "test-box": TestBox
     },
     methods: {
         show_it(data){

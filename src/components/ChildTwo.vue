@@ -4,10 +4,12 @@
     <p>
         <button @click="sendToHead">给header发消息</button>
         <span>{{ getMsg }}</span>
+        <button @click="testRoute">测试路由</button>
     </p>
 </div>
 </template>
 <script>
+import Router from '../router/index'
 export default {
     name: "childTwo",
     data: function () {
@@ -24,6 +26,10 @@ export default {
     methods: {
         sendToHead(){
             this.bus.$emit('fromFoot', "一条来自Foot的消息");
+        },
+        testRoute(){
+            console.log(Router);
+            this.$router.push('/lazyload')
         }
     }
 }

@@ -17,3 +17,5 @@ https://juejin.im/post/5bec223f5188250c102116b5
 https://zhuanlan.zhihu.com/p/33801391
 原生js实现瀑布流效果
 https://zhuanlan.zhihu.com/p/55575862
+零基础Hexo+Github搭建静态个人博客
+https://zhuanlan.zhihu.com/p/33801391

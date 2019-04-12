@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>懒猫试玩</title>
+    <link rel="stylesheet" href="./js/style.css">
+    <style>
+        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,i, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            list-style-type: none;
+            vertical-align: baseline;
+        }
+        .invite-content-wraper{
+            background:linear-gradient(360deg,rgba(255,67,88,1) 0%,rgba(255,52,52,1) 100%);
+        }
+        .top-banner-box{
+            position: relative;
+            width: 100%;
+            height: 19rem;
+            background-image: url('./img/invite_top_banner.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 26.786rem 19rem;
+        }
+        .logo-icon{
+            position: absolute;
+            left: .357rem;
+            top: .357rem;
+            width: 7.071rem;
+            height: 2.857rem;
+        }
+        .earn-top-box{
+            display: flex;
+            align-items: center;
+            margin: 0 1.143rem;
+            padding: .429rem 1.143rem;
+            box-sizing: border-box;
+            background:rgba(0,0,0,0.19);
+            border-radius: 1rem;
+            margin-bottom: .857rem;
+        }
+        .earn-top-title{
+            display: inline-block;
+            padding-right: .643rem;
+            color: #fff;
+            font-weight: 600;
+            border-right: 1px solid #E18083;
+            margin-right: .643rem;
+        }
+        .user-outter-box{
+            overflow: hidden;
+            height: 1.286rem;
+            width: 71%;
+        }
+        .user-info-box{
+            display: inline-block;
+            width: 100%; 
+        }
+        .user-info{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            height: 1.286rem;
+            font-size: .857rem;
+            color: #fff;
+        }
+        .avatar{
+            width: 1.357rem;
+            height: 1.286rem;
+            border-radius: 50%;
+            margin-right: .429rem;
+        }
+        .name{
+            margin-right: 1.429rem;
+        }
+        .before-time{
+            margin-right: 1.429rem;
+        }
+        .earn-money{
+            color: #FFFFB4;
+        }
+        .task-num-box{
+            margin: 0 1.143rem;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: .571rem;
+        }
+        .real-task{
+            width: 11.857rem;
+            height: 5.571rem;
+            background-color: #fff;
+            border-radius:0.7143rem 0px 0px 0.7143rem;
+            box-sizing: border-box;
+            padding: 0.9286rem 0 0.7857rem;
+        }
+        .heigh-task{
+            width: 11.857rem;
+            height: 5.571rem;
+            background-color: #fff;
+            border-radius:0px 0.7143rem 0.7143rem 0px;
+            box-sizing: border-box;
+            padding: 0.9286rem 0 0.7857rem;
+        }
+        .task-count{
+            font-size: 1.571rem;
+            font-weight: 600;
+            color: #333;
+            text-align: center;
+            margin-bottom: .571rem;
+        }
+        .task-title{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .task-icon-img{
+            width: 1.143rem;
+            height: 1.143rem;
+            margin-right: .286rem;
+        }
+        .task-title-text{
+            font-size: 1rem;
+            color: #333;
+        }
+        .top-users{
+            margin: 0 0.4286rem;
+        }
+        .top-users-img{
+            width: 25.929rem;
+            height: 33.357rem;
+        }
+        .earn-money-now{
+            position: fixed;
+            width: 100%;
+            height: 6.143rem;
+            bottom: 0;
+            left: 0;
+            text-align: center;
+        }
+        .earn-money-img{
+            width: 22.929rem;
+            height: 4.429rem;
+        }
+
+        /***原来老页面的样式***/
+        .copy_pop{
+            width: 21.428571428571427rem;
+            padding: 1.8571428571428572rem 1.1428571428571428rem 2.857142857142857rem;
+            box-sizing: border-box;
+            position: fixed;
+            top: 16%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            z-index: 600;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius:0.5714285714285714rem;
+        }
+        .copy_pop h1{
+            font-size:1.1428571428571428rem;
+            font-family:PingFangSC-Medium;
+            font-weight:500;
+            color:rgba(51,51,51,1);
+        }
+        .safari_pop{
+            width: 3.4285714285714284rem
+        }
+        .pop_tips{
+            margin: .7142857142857142rem 0 0.5428571428571428rem;
+            font-size:1rem;
+            font-family:PingFangSC-Regular;
+            font-weight:400;
+            color:rgba(102,102,102,1);
+            line-height:1.4285714285714286rem;
+        }
+        .pop_tips2{
+            font-size:1rem;
+            font-family:PingFangSC-Regular;
+            font-weight:400;
+            color:rgba(102,102,102,1);
+            line-height:1.4285714285714286rem;
+            margin-bottom: 1.14rem;
+        }
+        .safari{
+            width: 24px;
+        }
+        .pop_tips span{
+            color: #FF6353;
+        }
+        button{
+            border: none
+        }
+        .pop_tips img{
+            width: 24px;
+        }
+        .adress_wrap{
+            word-wrap:break-word;
+            word-break:break-all;
+            width:268px;
+            height:78px;
+            background:rgba(240,240,240,1);
+            border:2px dashed #D8D8D8;
+            padding: 15px;
+            box-sizing: border-box;
+            font-size:14px;
+            font-family:PingFangSC-Medium;
+            font-weight:500;
+            color:rgba(0,0,0,1);
+            line-height:24px;
+        }
+        .copy_btn{
+            width:15.714285714285714rem;
+            height:3.142857142857143rem;
+            background:linear-gradient(315deg,rgba(246,59,83,1) 0%,rgba(255,119,87,1) 100%);
+            border-radius:1.5714285714285714rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size:1.1428571428571428rem;
+            font-family:PingFangSC-Medium;
+            font-weight:500;
+            color:rgba(255,255,255,1);
+            margin-top: 2.2857142857142856rem;
+        }
+        .cancel_icon{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -4.142857142857143rem;
+            width: 1.8571428571428572rem
+        }
+        .toast{
+            font-size: 1.2142857142857142rem;
+            padding: 0.42857142857142855rem 0.8571428571428571rem;
+            border-radius: 0.2857142857142857rem;
+            background:rgba(0,0,0,0.72);
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity .6s ease-out
+        }
+        .guide_wrap{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 17.857142857142858rem;
+            height: 9.285714285714286rem;
+            font-size:1rem;
+            font-family:PingFangSC-Regular;
+            font-weight:400;
+            color:rgba(51,51,51,1);
+            z-index: 999;
+        }
+        .guide_wrap p{
+            margin: -2.857142857142857rem auto 0;
+            text-align: center;
+        }
+        .guide_wrap p span{
+            color: #FF6353;
+        }
+        .user_avatar{
+            border-radius: 2.2857142857142856rem;
+        }
+        #shadow{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top:0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+            z-index: 799;
+            background-color: #000;
+            display: none;
+        }
+        .guide_wrap img{
+            width: 17.857142857142858rem;
+        }
+        #shadow i{
+            width: 0.7142857142857143rem;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="invite-content-wraper">
+            <div class="top-banner-box">
+                <img class="logo-icon" src="./img/invite_logo.png">
+            </div>
+            <!--实时收入榜-->
+            <div class="earn-top-box">
+                <span class="earn-top-title">实时收入榜</span>
+                <div class="user-outter-box">
+                    <div class="user-info-box">
+                        <div class="user-info">
+                            <img class="avatar" src="./img/www.png">
+                            <span class="name">dan****</span>
+                            <span class="before-time">10秒前</span>
+                            <span class="earn-money">赚了12.00元</span>
+                        </div>
+                        <div class="user-info">
+                            <img class="avatar" src="./img/www.png">
+                            <span class="name">dan****</span>
+                            <span class="before-time">10秒前</span>
+                            <span class="earn-money">赚了12.00元</span>
+                        </div>
+                        <div class="user-info">
+                            <img class="avatar" src="./img/www.png">
+                            <span class="name">dan****</span>
+                            <span class="before-time">10秒前</span>
+                            <span class="earn-money">赚了12.00元</span>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <!--实时、高额任务数-->
+            <div class="task-num-box">
+                <div class="real-task">
+                    <p id="realTime-id" class="task-count">242,345</p>
+                    <div class="task-title">
+                        <img class="task-icon-img" src="./img/time_icon_count.png">
+                        <span class="task-title-text">实时任务数量</span>
+                    </div>
+                </div>
+                <div class="heigh-task">
+                    <p id="heighTask-id" class="task-count">38,749</p>
+                    <div class="task-title">
+                        <img class="task-icon-img" src="./img/matrix_icon_count.png">
+                        <span class="task-title-text">高额任务数量</span>
+                    </div>
+                </div>
+            </div>
+            <!--收入排行榜展示-->
+            <div class="top-users">
+                <img class="top-users-img" src="./img/invite_top_borad.png">
+            </div>
+            <!--占位-->
+            <div style="height: 6.143rem"></div>
+            <div class="earn-money-now">
+                <img class="earn-money-img" @click="goInstall()" src="./img/earn_money_now.png">
+            </div>
+        </div>
+
+        <!-- 不支持百度APP弹窗 -->
+        <div v-cloak v-if="copyPop" class="copy_pop_wrap">
+            <div class="shade"></div>
+            <div class="copy_pop">
+                <img src="__STATIC__/img/share/newinviteu/img/safari.png">
+                <h2 class="pop_tips flex_center"><p>暂不支持{{name}}，请点击复制链接后</p ></h2>
+                <h2 class="pop_tips2 flex_center"><p>打开safari浏览器</p ><img class="safari" src='__STATIC__/img/share/newinviteu/img/safari.png'><p>中粘贴并进入</p></h2>
+                <!--<h2 class="pop_tips">暂不支持{{name}}，请点击复制链接后打开safari<img src='__STATIC__/img/share/newinviteu/img/safari.png'>浏览器中粘贴进入，即可下载</h2>-->
+                <div id='address' class="adress_wrap">http://m.cattryapp.com/u/{$id}.html</div>
+                <div class="copy_btn" @click="copy_link">复制链接</div>
+                <img class="cancel_icon" src="https://static.cattryapp.com/12static/new/img/active/pop_cancel.png" @click="cancel_pop">
+                <div id='toast' class="toast">复制成功</div>
+            </div>
+        </div>
+        
+        <div id="shadow">
+            <i></i>
+
+
+
+        </div>
+        <div class="guide_wrap" id="shadow2" style="display: none">
+            <img src="__STATIC__/img/share/inviteu/inviteu_safari.png">
+            <p>在<span>Safari</span>中打开，下载安装助手</p>
+        </div>
+    </div>
+    <script src="./js/rem.js"></script>
+    <script src="./js/vue.min.js"></script>
+    <script src="https://static.cattryapp.com/12static/v5/js/axios.min.js"></script>
+    <script>
+            var MyMar;
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    copyPop:false,
+                    type:"{$type}",
+                    name:"",
+                },
+                mounted() {
+                    var realTimeTaskNum = Math.floor(Math.random() * (285734 - 236491 + 1) + 236491); //实时任务数量，范围236491-285734
+                    var heighTaskNum = Math.floor(Math.random() * (42597 - 31475 + 1) + 31475); //高额任务数量，范围31475-42597
+                    var realTimeElm = document.getElementById('realTime-id');
+                    var tempNum = realTimeTaskNum.toString().split('');
+                    tempNum.splice(-3, 0, ',');
+                    var realTaskStr = tempNum.join("");
+                    realTimeElm.textContent = realTaskStr;
+
+                    var heighTaskElm = document.getElementById('heighTask-id');
+                    var tempNum = heighTaskNum.toString().split('');
+                    tempNum.splice(-3, 0, ',');
+                    var realTaskStr = tempNum.join("");
+                    heighTaskElm.textContent = realTaskStr;
+                    //定时器
+                    var timer = setInterval(function(){ //实时任务的计时器
+                        if(realTimeTaskNum >= 1000){
+                            var tempNum = realTimeTaskNum.toString().split('');
+                            tempNum.splice(-3, 0, ',');
+                            var realTaskStr = tempNum.join("");
+                            realTimeElm.textContent = realTaskStr;
+                            realTimeTaskNum = realTimeTaskNum - 5;
+                        }else{
+                            realTimeElm.textContent = realTimeTaskNum;
+                            realTimeTaskNum = realTimeTaskNum - 5;
+                            if(realTimeTaskNum < 0){
+                                realTimeElm.textContent = 0;
+                                clearInterval(timer);
+                            }
+                        }
+                        
+                    }, 2000);
+                    var timer_heigh = setInterval(function(){ //高额任务的计时器
+                        if(heighTaskNum >= 1000){
+                            var tempNum = heighTaskNum.toString().split('');
+                            tempNum.splice(-3, 0, ',');
+                            var realTaskStr = tempNum.join("");
+                            heighTaskElm.textContent = realTaskStr;
+                            heighTaskNum = heighTaskNum - 5;
+                        }else{
+                            realTimeElm.textContent = heighTaskNum;
+                            heighTaskNum = heighTaskNum - 5;
+                            if(heighTaskNum < 0){
+                                heighTaskElm.textContent = 0;
+                                clearInterval(timer_heigh);
+                            }
+                        }
+                        
+                    }, 3000);
+                    
+                    //滚动效果
+                    var outter = document.getElementsByClassName('user-info-box')[0];
+                    outter.style.transition = 'transform 0s';
+                    outter.style.transform = 'translateY(0px)';
+                    var elDistance = document.getElementsByClassName('user-info')[0].clientHeight;
+                    var outterHeight = outter.clientHeight;
+                    var times = 1;
+                    var curDistance;
+                    var temphtml = outter.innerHTML;
+                    outter.innerHTML = temphtml + '<div class="user-info"><img class="avatar" src="./img/www.png"><span class="name">dan****</span><span class="before-time">10秒前</span><span class="earn-money">赚了12.00元</span></div>'
+                    outter.addEventListener('webkitTransitionEnd', ()=>{
+                        if(curDistance >= outterHeight){
+                            outter.style.transition = 'transform 0s';
+                            outter.style.transform = 'translateY(0px)';
+                            times = 1;
+                        }
+                    })
+                    var auto_scroll = setInterval(()=>{
+                        curDistance = elDistance * times;
+                        outter.style.transition = 'transform 1s';
+                        outter.style.transform = `translateY(-${curDistance}px)`;
+                        times += 1;
+                    }, 1800)
+                },
+                destroyed() {
+                    clearInterval(timer);
+                    clearInterval(heigh_timer);
+                    clearInterval(auto_scroll);
+                },
+                methods:{
+                    goInstall(){
+                        if(this.IsIos()==false){
+                            this.run("mmzAndroid");
+                            window.location.href='https://catmoney.cn/nineton-cat-api-server/invite/index';
+                            return;
+                        }
+                        if(this.getBrowserInfo()=='weixin'){
+                            document.getElementById("shadow").style.display="block";
+                            document.getElementById("shadow2").style.display="block";
+                        }else if(this.getBrowserInfo()!='safari'){
+                            this.name="";
+                            this.copyPop=true
+                        }else{
+
+                            if(this.type == ''){
+                                window.location.href="http://m.cattryapp.com/Share/down/type";
+                            }else{
+                                window.location.href="http://m.cattryapp.com/Share/down/type/"+this.type;
+                            }
+
+                        }
+                    },
+                    run(a){
+                        axios.get("http://lmsw.cqqwzx.com/Shares/pageCount.html?type="+this.type+"&ypq="+a)
+                            .then(function (response) {
+                            })
+                    },
+                    copy_link(){
+                        var adress = document.getElementById("address").innerHTML;
+                        const input = document.createElement('input');
+                        input.setAttribute('readonly', 'readonly');
+                        input.setAttribute('value', adress);
+                        document.body.appendChild(input);
+                        input.setSelectionRange(0, 9999);
+                        console.log(document.execCommand('copy'));
+                        if (document.execCommand('copy')) {
+                            document.execCommand('copy');
+                            console.log('复制成功');
+                            this.run("Ios_copy");
+                        }
+                        document.body.removeChild(input);
+                        toast.style.opacity = '1';
+                        setTimeout(() => {
+                            toast.style.opacity = '0';
+                    }, 2500);
+
+                    },
+                    cancel_pop(){
+                        this.copyPop=false
+                    },
+                    getBrowserInfo(){
+                        var ua = navigator.userAgent.toLocaleLowerCase();
+                        var browserType=null;
+                        if (ua.match(/firefox/) != null) {
+                            browserType = "huohu";
+                        }else if (ua.match(/uc/) != null) {
+                            browserType = "UC";
+                        } else if (ua.match(/baiduboxapp/) != null) {
+                            browserType = "baidu";
+                        }else if (ua.match(/tencent/) != null || ua.match(/qqbrowse/) != null) {
+                            browserType = "QQ";
+                        }else if (ua.match(/qhbrowser/) != null) {
+                            browserType = '360'
+                        }else if (ua.match(/safari/) != null) {
+                            browserType = "Safari";
+                        }else if(ua.match(/micromessenger/) !=null ){
+                            browserType = "weixin";
+                        }
+                        if(browserType=='baidu') return 'baidu';
+                        if(browserType=='Safari'){
+                            return 'safari';
+                        }else if(browserType=='weixin'){
+                            return 'weixin';
+                        }else{
+                            return 'common'
+                        }
+                    },
+                    //判断是否为IOS系统
+                    IsIos(){
+                        var u = navigator.userAgent, app = navigator.appVersion;
+                        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
+                        var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+                        if (isAndroid) {
+                            //这个是安卓操作系统
+                            return false
+                        }
+                        if (isIOS) {
+                            //这个是ios操作系统
+                            return true
+                        }
+                    },
+                }
+            })
+    </script>
+    <script>
+        window.onload = function() {
+            //阻止双击放大
+            document.addEventListener('touchstart', function(event) {
+                if (event.touches.length > 1) {
+                    event.preventDefault();
+                }
+            });
+            var lastTouchEnd = 0;
+            document.addEventListener('touchend', function(event) {
+                var now = (new Date()).getTime();
+                if (now - lastTouchEnd <= 300) {
+                    event.preventDefault();
+                }
+                lastTouchEnd = now;
+            }, false);
+
+            //阻止双指放大
+            document.addEventListener('gesturestart', function(event) {
+                event.preventDefault();
+            });
+        }
+    </script>
+</body>
+</html>

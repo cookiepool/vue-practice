@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>H5压缩</title>
+</head>
+<body>
+    <div>
+        <input type="file" name="imgUpload" id="Upload_Img">
+        <hr>
+        <h1>压缩前</h1>
+        <img id="review" src="">
+        <hr>
+        <h1>压缩后</h1>
+        <img id="review_after" src="">
+    </div>
+    <script src="./jquery-3.4.1.min.js"></script>
+    <script>
+        //预览图片
+        function showImg(file){
+            var fr = new FileReader();
+            fr.readAsDataURL(file);
+            fr.onload = function(e){
+                var img_base64 = this.result; //图片的base64
+                $("#review").attr("src", img_base64);
+
+                 //图片超过1M就压缩。
+                if(file.size > 1024 * 1024 * 1){
+                    //调用压缩函数
+                    compressFunc(img_base64, { quality: 0.6 });
+                }
+            }
+        }
+        /***压缩图片
+        img_path表示传过来的图片本身。
+        params_quality表示压缩的质量，参数是一个对象。如
+        {
+            width: 800,
+            height: 600,
+            quality: 0.5
+        }
+        如果不传quality、width和height则按图片的比例压缩。
+        ***/
+        function compressFunc(img_path, params_quality){
+            console.log("get in and start compress");
+            var img = new Image();
+            img.src = img_path;
+            img.onload = function(){
+                var w = this.width,
+                    h = this.height,
+                    scale = w / h;
+                w = params_quality.w || w;
+                h = params_quality.h || h;
+
+                //创建canvas
+                var canvas = document.createElement('canvas');
+                ctx = canvas.getContext('2d');
+                canvas.width = w;
+                canvas.height = h;
+                ctx.drawImage(this, 0, 0, w, h);
+
+                var quality = 0.7;
+                if(params_quality.quality && params_quality.quality > 0 && params_quality.quality <= 1){
+                    quality = params_quality.quality;
+                }
+                var base64_temp = canvas.toDataURL('image/jpeg', quality);
+                //预览一哈
+                $("#review_after").attr("src", base64_temp);
+            }
+        }
+        
+        $(function(){
+            $("#Upload_Img").change(function(){
+                var file = this.files[0]; //这是一个Bolb类型的数据
+                console.log(file);
+                console.log(file.size); //文件的大小（单位为字节）
+                console.log(file.type); //文件的类型（如image/png）
+                //判断一哈用户上传的是不是图片类型
+                if(file.type.indexOf('image') != -1){
+                    //预览图片
+                    showImg(file);
+                }else{
+                    alert("请上传图片！谢谢！")
+                    this.value = '';
+                }
+            })
+        });
+    </script>
+</body>
+</html>

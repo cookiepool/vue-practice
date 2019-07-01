@@ -2,9 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Parent from '@/page/Parent';
 import TestBox from '@/page/TestBox';
-import Game from '@/page/GameList';
 import LazyLoad from '@/page/LazyLoad';
-import Loading from '@/components/loading/Loading.vue';
 
 import App from '../App';
 Vue.use(Router)
@@ -30,19 +28,9 @@ const routes = [
         component: TestBox
       },
       {
-        path: '/game',
-        name: 'game',
-        component: Game
-      },
-      {
         path: '/lazyload',
         name: 'lazyload',
         component: LazyLoad
-      },
-      {
-        path: '/loading',
-        name: 'loading',
-        component: Loading
       }
     ]
   }

@@ -9,6 +9,11 @@
     <button v-on:click="testLoading">点击测试加载动画</button>
     <hr>
     <test-box></test-box>
+    <hr>
+    <h1>插槽测试</h1>
+    <test-slot>
+        <p>插槽分发的内容</p>
+    </test-slot>
 </div>
     
 </template>
@@ -16,7 +21,9 @@
 <script>
 import ChildOne from "../components/ChildOne";
 import ChildTwo from "../components/ChildTwo";
-import TestBox from "../page/TestBox"
+import TestBox from "../page/TestBox";
+import TestSlot from "../components/TestSlot";
+
 export default {
     name: "parent",
     data: function () {
@@ -28,7 +35,8 @@ export default {
     components: {
         'head-part': ChildOne,
         "foot-part": ChildTwo,
-        "test-box": TestBox
+        "test-box": TestBox,
+        "test-slot": TestSlot
     },
     methods: {
         show_it(data){

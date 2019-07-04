@@ -11,7 +11,7 @@
     <test-box></test-box>
     <hr>
     <h1>插槽测试</h1>
-    <test-slot>
+    <test-slot @click="handleClick" style="background-color: #000">
         <p>插槽分发的内容</p>
         {{soltTest}}
     </test-slot>
@@ -32,7 +32,9 @@
         </li>
         <li>
             <h2>作用域插槽</h2>
-
+            <scope-slot v-slot:default="mySlotProps">
+                {{ mySlotProps.user.lastName }}
+            </scope-slot>
         </li>
     </ul>
 </div>
@@ -74,6 +76,9 @@ export default {
                 this.$loading.close();
                 clearTimeout(timer);
             }, 5000);
+        },
+        handleClick(){
+            console.log('组件上绑定事件')
         }
     }
 }

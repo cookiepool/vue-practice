@@ -1,0 +1,22 @@
+<template>
+    <div class="all-wraper">
+        <h2>组件通讯</h2>
+        <router-link to="/communication">Go</router-link>
+        <h2>图片懒加载</h2>
+        <router-link to="/lazyload">Go</router-link>
+        <h2>弹出框</h2>
+        <router-link to="/dialogbox">Go</router-link>
+        <h2>插槽</h2>
+        <router-link to="/slotpage">Go</router-link>
+    </div>
+</template>
+
+<script>
+export default {
+    
+}
+</script>
+
+<style scoped>
+
+</style>

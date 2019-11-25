@@ -1,10 +1,14 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Parent from '@/page/Parent';
-import TestBox from '@/page/TestBox';
-import LazyLoad from '@/page/LazyLoad';
 
 import App from '../App';
+import Home from '../page/Home.vue';
+
+import Communication from '@/page/Communication.vue';
+import DialogBox from '@/page/DialogBox.vue';
+import LazyLoad from '@/page/LazyLoad';
+import SlotPage from '../page/SlotPage.vue';
+
 Vue.use(Router)
 
 const routes = [
@@ -19,18 +23,28 @@ const routes = [
       },
       {
         path: '/',
-        name: 'communication',
-        component: Parent
+        name: 'home',
+        component: Home
       },
       {
-        path: '/test',
-        name: 'test',
-        component: TestBox
+        path: '/communication',
+        name: 'communication',
+        component: Communication
       },
       {
         path: '/lazyload',
         name: 'lazyload',
         component: LazyLoad
+      },
+      {
+        path: '/dialogbox',
+        name: 'dialogbox',
+        component: DialogBox
+      },
+      {
+        path: 'slotpage',
+        name: 'slotpage',
+        component: SlotPage
       }
     ]
   }

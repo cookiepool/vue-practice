@@ -8,6 +8,7 @@ import Communication from '@/page/Communication.vue';
 import DialogBox from '@/page/DialogBox.vue';
 import LazyLoad from '@/page/LazyLoad';
 import SlotPage from '../page/SlotPage.vue';
+import ResponseNull from '../page/ResponseNull.vue';
 
 Vue.use(Router)
 
@@ -45,6 +46,11 @@ const routes = [
         path: 'slotpage',
         name: 'slotpage',
         component: SlotPage
+      },
+      {
+        path: 'responsenull',
+        name: 'responsenull',
+        component: ResponseNull
       }
     ]
   }

@@ -21,7 +21,7 @@
             </li>
             <li>
                 <h2>作用域插槽</h2>
-                <scope-slot v-slot:default="mySlotProps">
+                <scope-slot v-slot:default="mySlotProps"> <!-- mySlotProps是从子组件scope-slot传递过来的值-->
                     {{ mySlotProps.user.lastName }}
                 </scope-slot>
             </li>

@@ -8,6 +8,8 @@
         <router-link to="/dialogbox">Go</router-link>
         <h2>插槽</h2>
         <router-link to="/slotpage">Go</router-link>
+        <h2>响应式失效演示</h2>
+        <router-link to="/responsenull">Go</router-link>
     </div>
 </template>
 

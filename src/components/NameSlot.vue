@@ -4,7 +4,7 @@
             <slot name="header"></slot>
         </header>
         <main>
-            <slot></slot>
+            <slot name="default">this is default content</slot>
         </main>
         <footer>
             <slot name="footer"></slot>

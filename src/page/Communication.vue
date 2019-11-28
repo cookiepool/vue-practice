@@ -1,6 +1,6 @@
 <template>
 <div>
-    <head-part :title-parent="showText" v-on:getChildMsg="show_it"></head-part>
+    <ChildOne :title-parent="showText" v-on:getChildMsg="show_it"></ChildOne>
     <hr>
     <p>来自子组件的数量消息：{{ count }}</p>
     <hr>
@@ -17,16 +17,25 @@ export default {
     name: "parent",
     data: function () {
         return {
-            showText: "欢迎来到首页",
+            showText: "欢迎来到首页-组件通讯测试",
             count: 0,
         }
     },
+    filters: {
+
+    },
+    computed: {
+
+    },
     components: {
-        'head-part': ChildOne,
+        // 两种写法都可以
+        // 'head-part': ChildOne,
+        ChildOne,
         "foot-part": ChildTwo,
     },
     methods: {
         show_it(data){
+            console.log(data);
             this.count++;
         },
         handleClick(){

@@ -15,7 +15,11 @@
 <script>
 export default {
     name: 'child',
-    props: ["title-parent"],
+    props: {
+        titleParent: {
+            type: String
+        }
+    },
     data: function () {
         return {
             title: this.titleParent,

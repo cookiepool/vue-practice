@@ -29,7 +29,7 @@ export default {
     },
     methods: {
         handleClick(){
-            this.$emit("getChildMsg", [1, 2, 3]);
+            this.$emit("get-child-msg", [1, 2, 3]);
             this.total++;
         },
         sendToFoot(){

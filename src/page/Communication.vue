@@ -1,6 +1,6 @@
 <template>
 <div>
-    <ChildOne :title-parent="showText" v-on:getChildMsg="show_it"></ChildOne>
+    <ChildOne :title-parent="showText" v-on:get-child-msg="show_it"></ChildOne>
     <hr>
     <p>来自子组件的数量消息：{{ count }}</p>
     <hr>

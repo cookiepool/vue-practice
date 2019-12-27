@@ -10,6 +10,7 @@ import LazyLoad from '@/page/LazyLoad';
 import SlotPage from '../page/SlotPage.vue';
 import ResponseNull from '../page/ResponseNull.vue';
 import ModulesTest from '../page/ModulesTest.vue';
+import MixinsPage from '../page/MixinsPages.vue';
 
 Vue.use(Router)
 
@@ -57,6 +58,11 @@ const routes = [
         path: 'modulestest',
         name: 'modulestest',
         component: ModulesTest
+      },
+      {
+        path: 'mixinpage',
+        name: 'mixinpage',
+        component: MixinsPage
       }
     ]
   }

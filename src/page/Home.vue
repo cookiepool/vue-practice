@@ -12,6 +12,8 @@
         <router-link to="/responsenull">Go</router-link>
         <h2>commonjs\es6模块演示</h2>
         <router-link to="/modulestest">Go</router-link>
+        <h2>Mixin测试</h2>
+        <router-link to="/mixinpage">Go</router-link>
     </div>
 </template>
 

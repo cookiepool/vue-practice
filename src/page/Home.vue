@@ -10,6 +10,8 @@
         <router-link to="/slotpage">Go</router-link>
         <h2>响应式失效演示</h2>
         <router-link to="/responsenull">Go</router-link>
+        <h2>commonjs\es6模块演示</h2>
+        <router-link to="/modulestest">Go</router-link>
     </div>
 </template>
 

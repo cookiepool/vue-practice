@@ -9,6 +9,7 @@ import DialogBox from '@/page/DialogBox.vue';
 import LazyLoad from '@/page/LazyLoad';
 import SlotPage from '../page/SlotPage.vue';
 import ResponseNull from '../page/ResponseNull.vue';
+import ModulesTest from '../page/ModulesTest.vue';
 
 Vue.use(Router)
 
@@ -51,6 +52,11 @@ const routes = [
         path: 'responsenull',
         name: 'responsenull',
         component: ResponseNull
+      },
+      {
+        path: 'modulestest',
+        name: 'modulestest',
+        component: ModulesTest
       }
     ]
   }

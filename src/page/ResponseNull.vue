@@ -1,13 +1,13 @@
 <template>
     <!-- 响应式失效 -->
     <div class="all-wraper">
-<h3>响应式失效演示</h3>
-<ul>
-    <li v-for="item in list">{{ item }}</li>
-</ul>
-<hr>
-<button @click="changeData">修改-1</button>
-<button @click="changeDataOk">修改-2</button>
+        <h3>响应式失效演示</h3>
+        <ul>
+            <li v-for="item in list">{{ item }}</li>
+        </ul>
+        <hr>
+        <button @click="changeData">修改-1</button>
+        <button @click="changeDataOk">修改-2</button>
         <hr>
         <h4>使用v-model.number可以把输入的值转换成number类型，默认它是string</h4>
         <input type="number" v-model.number="numberVal" @change="handleChange">

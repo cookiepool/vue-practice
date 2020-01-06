@@ -11,6 +11,7 @@ import SlotPage from '../page/SlotPage.vue';
 import ResponseNull from '../page/ResponseNull.vue';
 import ModulesTest from '../page/ModulesTest.vue';
 import MixinsPage from '../page/MixinsPages.vue';
+import TestiOSPop from '../page/TestiOSInput.vue';
 
 Vue.use(Router)
 
@@ -63,6 +64,11 @@ const routes = [
         path: 'mixinpage',
         name: 'mixinpage',
         component: MixinsPage
+      },
+      {
+        path: 'testpop',
+        name: 'testpop',
+        component: TestiOSPop
       }
     ]
   }

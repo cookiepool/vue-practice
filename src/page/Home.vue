@@ -16,6 +16,8 @@
         <router-link to="/mixinpage">Go</router-link>
         <h2>弹窗输入测试</h2>
         <router-link to="/testpop">Go</router-link>
+        <h2>加密测试</h2>
+        <router-link to="/cryptotest">Go</router-link>
     </div>
 </template>
 

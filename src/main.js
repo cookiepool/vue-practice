@@ -5,6 +5,16 @@ import App from './App'
 import router from './router'
 
 import Loading from './components/loading/index';
+
+// 引入虚拟列表插件vue-virtual-scroller
+import 'vue-virtual-scroller/dist/vue-virtual-scroller.css';
+import { RecycleScroller } from 'vue-virtual-scroller';
+Vue.component('RecycleScroller', RecycleScroller);
+
+// 引入虚拟列表插件vue-virtual-scroll-list
+import VirtualList from 'vue-virtual-scroll-list';
+Vue.component('virtual-list', VirtualList);
+
 Vue.config.productionTip = false
 
 Vue.prototype.$loading = Loading;

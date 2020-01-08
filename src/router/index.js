@@ -13,13 +13,14 @@ import ModulesTest from '../page/ModulesTest.vue';
 import MixinsPage from '../page/MixinsPages.vue';
 import TestiOSPop from '../page/TestiOSInput.vue';
 import CryptoTest from '../page/CryptoTest.vue';
+import VirtualList from '../page/VirtualListTest.vue';
+import VirtualListSelf from '../page/VirtualListSelf.vue';
 
 Vue.use(Router)
 
 const routes = [
   {
     path: '/',
-    name: 'App',
     component: App,
     children: [
       {
@@ -75,6 +76,16 @@ const routes = [
         path: 'cryptotest',
         name: 'cryptotest',
         component: CryptoTest
+      },
+      {
+        path: 'virtuallist',
+        name: 'virtuallist',
+        component: VirtualList
+      },
+      {
+        path: 'virtuallistself',
+        name: 'virtuallistself',
+        component: VirtualListSelf
       }
     ]
   }

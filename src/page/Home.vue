@@ -18,6 +18,10 @@
         <router-link to="/testpop">Go</router-link>
         <h2>加密测试</h2>
         <router-link to="/cryptotest">Go</router-link>
+        <h2>虚拟列表测试</h2>
+        <router-link to="/virtuallist">Go</router-link>
+        <h2>自己实现虚拟列表</h2>
+        <router-link to="/virtuallistself">Go</router-link>
     </div>
 </template>
 

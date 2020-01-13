@@ -15,6 +15,7 @@ import TestiOSPop from '../page/TestiOSInput.vue';
 import CryptoTest from '../page/CryptoTest.vue';
 import VirtualList from '../page/VirtualListTest.vue';
 import VirtualListSelf from '../page/VirtualListSelf.vue';
+import BackToTop from '../page/BackToTop.vue';
 
 Vue.use(Router)
 
@@ -86,6 +87,11 @@ const routes = [
         path: 'virtuallistself',
         name: 'virtuallistself',
         component: VirtualListSelf
+      },
+      {
+        path: 'backtotop',
+        name: 'backtotop',
+        component: BackToTop
       }
     ]
   }

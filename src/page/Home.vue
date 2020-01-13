@@ -22,6 +22,8 @@
         <router-link to="/virtuallist">Go</router-link>
         <h2>自己实现虚拟列表</h2>
         <router-link to="/virtuallistself">Go</router-link>
+        <h2>回到顶部</h2>
+        <router-link to="/backtotop">Go</router-link>
     </div>
 </template>
 

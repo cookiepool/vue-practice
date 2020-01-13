@@ -1,5 +1,54 @@
 <template>
-    <div>
+    <div class="wraper">
+        <p>Hello</p>
+        <br/>
+        <p>Hello</p>
+        <br/>
+        <p>Hello</p>
+        <br/>
+        <p>Hello</p>
+        <br/>
+        <p>Hello</p>
+        <br/>
+        <p>Hello</p>
+        <br/>
+        <p>Hello</p>
+        <br/>
+        <p>Hello</p>
+        <br/>
+        <p>Hello</p>
+        <br/>
+        <p>Hello</p>
+        <br/>
+        <p>Hello</p>
+        <br/>
+        <p>Hello</p>
+        <br/>
+        <p>Hello</p>
+        <br/>
+        <p>Hello</p>
+        <br/>
+        <p>Hello</p>
+        <br/>
+        <p>Hello</p>
+        <br/>
+        <p>Hello</p>
+        <br/>
+        <p>Hello</p>
+        <br/>
+        <p>Hello</p>
+        <br/>
+        <p>Hello</p>
+        <br/>
+        <p>Hello</p>
+        <br/>
+        <p>Hello</p>
+        <br/>
+        <p>Hello</p>
+        <br/>
+        <p>Hello</p>
+        <br/>
+
         <img data-src="static/img/1.jpg" alt="">
         <img data-src="static/img/2.jpg" alt="">
         <img data-src="static/img/3.jpg" alt="">
@@ -13,6 +62,8 @@
 </template>
 
 <script>
+import lazyLoad from '../utils/lazyload.js';
+
 export default {
     data: function(){
         return {
@@ -20,13 +71,7 @@ export default {
         }
     },
     mounted: function(){
-        var imgs = document.querySelectorAll('img');
-        //初次进入加载
-        this.lazyLoad(imgs);
-        var _this = this;
-        window.onscroll = function(){
-            _this.lazyLoad(imgs);
-        }
+        lazyLoad.lazyLoadPolyfill('img');
     },
     methods: {
         getTop: function(elm){
@@ -42,6 +87,7 @@ export default {
             var viewHeight = document.documentElement.clientHeight;
             //获取滚动高度
             var scrollTopVal = document.documentElement.scrollTop || document.body.scrollTop;
+            console.log(viewHeight, scrollTopVal)
             for(var i = 0; i < imgs.length; i++){
                 if((viewHeight + scrollTopVal) > this.getTop(imgs[i])){
                     imgs[i].src = imgs[i].getAttribute('data-src')
@@ -55,7 +101,7 @@ export default {
 <style>
     img{
         width: 100%;
-        height: 600px;
+        /* height: 300px; */
         margin-bottom: 50px;
         border: none;
         outline: none;

@@ -4,18 +4,20 @@ import Router from 'vue-router';
 import App from '../App';
 import Home from '../page/Home.vue';
 
-import Communication from '@/page/Communication.vue';
-import DialogBox from '@/page/DialogBox.vue';
-import LazyLoad from '@/page/LazyLoad';
-import SlotPage from '../page/SlotPage.vue';
-import ResponseNull from '../page/ResponseNull.vue';
-import ModulesTest from '../page/ModulesTest.vue';
-import MixinsPage from '../page/MixinsPages.vue';
-import TestiOSPop from '../page/TestiOSInput.vue';
-import CryptoTest from '../page/CryptoTest.vue';
-import VirtualList from '../page/VirtualListTest.vue';
-import VirtualListSelf from '../page/VirtualListSelf.vue';
-import BackToTop from '../page/BackToTop.vue';
+const Communication = r => require.ensure([], () => r(require('@/page/Communication.vue')),'communication');
+const DialogBox = r => require.ensure([], () => r(require('@/page/DialogBox.vue')),'dialogbox');
+const LazyLoad = r => require.ensure([], () => r(require('@/page/LazyLoad')),'lazyload');
+const SlotPage = r => require.ensure([], () => r(require('../page/SlotPage.vue')),'slotpage');
+
+const ResponseNull = r => require.ensure([], () => r(require('../page/ResponseNull.vue')),'responsenull');
+const ModulesTest = r => require.ensure([], () => r(require('../page/ModulesTest.vue')),'modulestest');
+const MixinsPage = r => require.ensure([], () => r(require('../page/MixinsPages.vue')),'mixinpage');
+const TestiOSPop = r => require.ensure([], () => r(require('../page/TestiOSInput.vue')),'testpop');
+
+const CryptoTest = r => require.ensure([], () => r(require('../page/CryptoTest.vue')),'cryptotest');
+const VirtualList = r => require.ensure([], () => r(require('../page/VirtualListTest.vue')),'virtuallist');
+const VirtualListSelf = r => require.ensure([], () => r(require('../page/VirtualListSelf.vue')),'virtuallistself');
+const BackToTop = r => require.ensure([], () => r(require('../page/BackToTop.vue')),'backtotop');
 
 Vue.use(Router)
 
